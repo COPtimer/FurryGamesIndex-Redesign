@@ -117,7 +117,7 @@ ul {
     font-family: "Extra Material Icons";
     font-style: normal;
     font-weight: 400;
-    src: url(/resources/extra-material-icons.woff) format("woff");
+    src: url(../resources/extra-material-icons.woff) format("woff");
 }
 
 .material-icons {
