@@ -827,7 +827,7 @@ article:lang(en) h4 {
 }
 
 @media screen and (max-width: 488px) {
-    .conditional-hide {
+    .entry .description p:not(.essential) {
         display: none;
     }
     .entry[class~="detailed"] .description,
