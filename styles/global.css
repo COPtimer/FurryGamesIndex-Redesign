@@ -74,6 +74,7 @@ hr {
 img {
     width: 100%;
     height: auto;
+    object-fit: cover;
 }
 
 p {
@@ -149,23 +150,6 @@ ul {
 
 :where(.material-icons, .material-icons-outlined, .extra-material-icons)::before {
     content: attr(data-icon-name);
-}
-
-/*------------------------------------*\
-  按钮
-\*------------------------------------*/
-
-.icon-button {
-    padding: 12px;
-}
-
-/*------------------------------------*\
-  列表
-\*------------------------------------*/
-
-.list {
-    display: grid;
-    align-items: center;
 }
 
 /*------------------------------------*\
@@ -287,15 +271,19 @@ body > hr {
 .version-warning {
     align-self: stretch;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     background-color: var(--secondary-background-color);
     padding: 0 var(--increment);
 }
 
-.version-warning .list {
+.version-warning .container {
     width: 100%;
     max-width: calc(3 * var(--main-grid-unit) + 2 * var(--main-column-gap));
+    display: grid;
     grid-template-columns: 56px auto;
+    justify-items: start;
+    align-items: center;
 }
 
 .version-warning span {
@@ -309,22 +297,17 @@ body > hr {
 /* 导航顶栏 */
 
 header {
-    align-self: stretch;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 17px 0;
-    margin-top: var(--keyline);
+    width: calc(100% - 2 * var(--increment));
+    max-width: calc(3 * var(--main-grid-unit) + 2 * var(--main-column-gap));
+    margin-top: 24px;
 }
 
 header nav {
-    width: 100%;
-    max-width: calc(3 * var(--main-grid-unit) + 2 * var(--main-column-gap));
     display: flex;
     flex-wrap: wrap;
-    column-gap: var(--keyline);
-    row-gap: 8px;
-    padding: 0 var(--increment);
+    justify-content: space-between;
+    padding: 17px 0;
+    gap: 8px var(--main-column-gap);
 }
 
 header ul {
@@ -333,10 +316,6 @@ header ul {
     align-items: center;
     flex-wrap: wrap;
     row-gap: 4px;
-}
-
-h3 {
-    margin-right: auto;
 }
 
 header a {
@@ -355,14 +334,24 @@ footer {
     display: grid;
     grid-template-columns: repeat(3, var(--main-grid-unit));
     gap: var(--main-column-gap);
-    margin: 40px 0;
+    margin: var(--main-column-gap) 0;
     padding: 0 var(--increment);
 }
 
-footer a span {
+footer p>a span {
     font-size: 18px;
     vertical-align: text-top;
     margin-right: 6px;
+}
+
+address {
+    font-style: normal;
+    margin-top: 7px;
+}
+
+address a {
+    display: inline-flex;
+    padding: 12px;
 }
 
 /* 主页 */
@@ -370,19 +359,9 @@ footer a span {
 .preface {
     display: grid;
     grid-template-columns: repeat(3, var(--main-grid-unit));
-    column-gap: var(--main-column-gap);
-    row-gap: 20px;
-    margin: 40px 0;
+    gap: calc(var(--main-column-gap) / 2) var(--main-column-gap);
+    margin: var(--main-column-gap) 0;
     padding: 0 var(--increment);
-}
-
-.preface p {
-    margin-top: 8px;
-}
-
-.preface article {
-    grid-column: span 2;
-    user-select: text;
 }
 
 hgroup {
@@ -402,9 +381,17 @@ h2 {
     line-height: var(--headline-leading);
 }
 
+.preface p {
+    margin-top: 8px;
+}
+
+.preface article {
+    grid-column: span 2;
+    user-select: text;
+}
+
 .preface nav {
     font-size: 1.5rem;
-    font-weight: 400;
     letter-spacing: 0em;
     line-height: var(--headline-leading);
     column-gap: var(--main-column-gap);
@@ -424,12 +411,12 @@ h2 {
 /* 所有游戏 */
 
 .entry {
-    width: calc(100% - 2 * var(--increment));
     max-width: calc(3 * var(--main-grid-unit) + 2 * var(--main-column-gap));
     display: flex;
     flex-direction: column;
     margin: var(--main-column-gap) 0;
-    row-gap: var(--keyline);
+    padding: 0 var(--increment);
+    row-gap: 24px;
 }
 
 .category {
@@ -464,18 +451,30 @@ h2 {
 
 .entry h4 {
     font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.entry[class~="detailed"] h4 {
+    grid-column: span 2;
     margin-bottom: 15px;
 }
 
 article:lang(en) h4 {
+    margin-bottom: 7px;
+}
+
+.entry[class~="detailed"] article:lang(en) h4 {
     margin-bottom: 12px;
 }
 
-.entry picture {
+.entry article > picture {
     grid-column-end: -1;
     grid-row: 1/-1;
-    justify-self: center;
     align-self: center;
+}
+
+.entry article > picture img {
+    aspect-ratio: 16/9;
 }
 
 /* 游戏详情 */
@@ -483,7 +482,7 @@ article:lang(en) h4 {
 .introduction {
     display: grid;
     grid-template-columns: repeat(3, var(--main-grid-unit));
-    grid-template-rows: repeat(3, auto);
+    grid-template-rows: max-content max-content max-content auto;
     column-gap: var(--main-column-gap);
     margin: var(--main-column-gap) 0;
     padding: 0 var(--increment);
@@ -501,14 +500,23 @@ article:lang(en) h4 {
 .description {
     grid-column: span 2;
     user-select: text;
+}
+
+.entry[class~="detailed"] .description {
+    margin-bottom: var(--main-column-gap);
+}
+
+.introduction .description {
+    margin-bottom: var(--main-column-gap);
     font-size: 1.25rem;
     letter-spacing: 0.005em;
     line-height: var(--title-leading);
 }
 
-.entry[class~="detailed"] .description,
-.introduction .description {
-    margin-bottom: var(--main-column-gap);
+.description h5 {
+    font-weight: bold;
+    margin-top: 14px;
+    margin-bottom: 4px;
 }
 
 .media {
@@ -529,11 +537,18 @@ article:lang(en) h4 {
     margin-bottom: 8px;
 }
 
+.introduction .labels {
+    margin-bottom: var(--main-column-gap);
+}
+
 .labels div {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
     break-inside: avoid-column;
+}
+
+.labels div:not(:last-of-type) {
     margin-bottom: 12px;
 }
 
@@ -567,6 +582,7 @@ article:lang(en) h4 {
     display: flex;
     align-items: center;
     padding: 7px 0;
+    break-inside: avoid;
 }
 
 .resources a {
@@ -677,6 +693,7 @@ article:lang(en) h4 {
         grid-template-columns: auto var(--main-grid-unit);
     }
     .preface article,
+    .entry[class~="detailed"] h4,
     .description,
     .media,
     .labels {
@@ -708,18 +725,20 @@ article:lang(en) h4 {
         display: flex;
         flex-direction: column;
     }
-    .introduction .description,
-    .entry[class~="detailed"] .description {
+    :is(.introduction, .entry[class~="detailed"]) .description {
         order: 1;
         margin-bottom: 34px;
     }
-    .entry article>picture {
-        margin-bottom: 20px;
+    .entry article > picture {
+        margin-bottom: 13px;
     }
-    .media {
-        order: 2;
+    .entry article:lang(en) > picture {
+        margin-bottom: 14px;
     }
     .labels {
+        order: 2;
+    }
+    .media {
         order: 3;
     }
     .entry[class~="detailed"] .labels {
@@ -746,17 +765,18 @@ article:lang(en) h4 {
         display: flex;
         flex-direction: column;
     }
-    .entry article {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    nav {
+    .preface nav {
         column-count: 2;
     }
-    nav a:nth-of-type(2) {
+    .preface nav a:nth-of-type(2) {
         break-after: column;
     }
+    .entry article,
     footer {
         grid-template-columns: repeat(2, 1fr);
+    }
+    .entry article > picture img {
+        aspect-ratio: auto;
     }
 }
 
@@ -765,19 +785,21 @@ article:lang(en) h4 {
         display: flex;
         flex-direction: column;
     }
-    .entry picture {
+    .entry article picture {
         order: -1;
         align-self: stretch;
+    }
+    .entry article > picture img {
+        aspect-ratio: 2/1;
     }
     .resources {
         display: flex;
     }
 }
 
-@media screen and (max-width: 632px) {
+@media screen and (max-width: 648px) {
     :root {
         --increment: 56px;
-        --keyline: 24px;
     }
     h1 {
         font-size: 2.8125rem;
@@ -789,19 +811,35 @@ article:lang(en) h4 {
         letter-spacing: 0.005em;
         line-height: var(--title-leading);
     }
-    nav {
+    .preface nav {
         column-count: 1;
     }
-    nav a {
-        break-inside: auto;
-    }
-    nav a:nth-of-type(2) {
+    .preface nav a:nth-of-type(2) {
         break-after: auto;
     }
-
     footer {
         display: flex;
         flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 632px) {
+}
+
+@media screen and (max-width: 488px) {
+    .conditional-hide {
+        display: none;
+    }
+    .entry[class~="detailed"] .description,
+    .introduction .description {
+        font-size: 1rem;
+        letter-spacing: 0.01em;
+        line-height: var(--subheading-leading);
+    }
+    h1 {
+        font-size: 2.125rem;
+        letter-spacing: 0em;
+        line-height: var(--display-1-leading);
     }
 }
 
@@ -809,21 +847,17 @@ article:lang(en) h4 {
     .version-warning {
         padding: 0;
     }
-    .version-warning .list {
+    .version-warning .container {
         max-width: var(--main-grid-unit);
     }
     header {
-        margin-top: 8px;
+        width: var(--main-grid-unit);
     }
-    header nav,
     .preface,
+    .entry,
     body > hr,
     footer {
-        max-width: var(--main-grid-unit);
-        padding: 0;
-    }
-    .entry {
-        width: 100%;
+        width: calc(100% - 2 * var(--keyline));
         max-width: var(--main-grid-unit);
         padding: 0;
     }
@@ -838,12 +872,8 @@ article:lang(en) h4 {
 }
 
 @media screen and (max-width: 408px) {
-    .version-warning {
-        display: flex;
-        padding: 0 var(--keyline);
-    }
-    header nav {
-        padding: 0 var(--keyline);
+    header {
+        margin-top: 8px;
     }
     .preface {
         padding: 0 var(--keyline);
@@ -851,21 +881,10 @@ article:lang(en) h4 {
     }
     .entry {
         width: auto;
-        padding: 0 var(--keyline);
         margin-top: 20px;
     }
     .introduction {
         padding: 0 var(--keyline);
-    }
-    .description {
-        font-size: 1rem;
-        letter-spacing: 0.01em;
-        line-height: var(--subheading-leading);
-    }
-    h1 {
-        font-size: 2.125rem;
-        letter-spacing: 0em;
-        line-height: var(--display-1-leading);
     }
     .preface article {
         order: 3;
@@ -891,8 +910,17 @@ article:lang(en) h4 {
     }
 }
 
-@media screen and (max-width: 352px) {
+@media screen and (max-width: 392px) {
     :root {
         --keyline: 16px;
+    }
+    .version-warning {
+        padding: 0 var(--keyline);
+    }
+    header {
+        width: calc(100% - 2 * var(--keyline));
+    }
+    .entry {
+        padding: 0 var(--keyline);
     }
 }
