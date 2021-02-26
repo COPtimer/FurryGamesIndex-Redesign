@@ -338,7 +338,7 @@ footer {
     padding: 0 var(--increment);
 }
 
-footer p>a span {
+footer p > a span {
     font-size: 18px;
     vertical-align: text-top;
     margin-right: 6px;
@@ -450,12 +450,8 @@ h2 {
 }
 
 .entry h4 {
-    font-weight: bold;
-    margin-bottom: 6px;
-}
-
-.entry[class~="detailed"] h4 {
     grid-column: span 2;
+    font-weight: bold;
     margin-bottom: 15px;
 }
 
@@ -476,6 +472,19 @@ article:lang(en) h4 {
 .entry article > picture img {
     aspect-ratio: 16/9;
 }
+
+:is(.entry, .introduction) h4 {
+    font-size: 2.125rem;
+    letter-spacing: 0em;
+    line-height: var(--display-1-leading);
+}
+
+:is(.entry, .introduction) h4 span {
+    font-size: 1.5rem;
+    letter-spacing: 0em;
+    line-height: var(--headline-leading);
+}
+
 
 /* 游戏详情 */
 
@@ -693,7 +702,7 @@ article:lang(en) h4 {
         grid-template-columns: auto var(--main-grid-unit);
     }
     .preface article,
-    .entry[class~="detailed"] h4,
+    .entry h4,
     .description,
     .media,
     .labels {
@@ -827,9 +836,6 @@ article:lang(en) h4 {
 }
 
 @media screen and (max-width: 488px) {
-    .entry .description p:not(.essential) {
-        display: none;
-    }
     .entry[class~="detailed"] .description,
     .introduction .description {
         font-size: 1rem;
