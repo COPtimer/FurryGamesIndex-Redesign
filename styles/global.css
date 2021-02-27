@@ -485,7 +485,6 @@ article:lang(en) h4 {
     line-height: var(--headline-leading);
 }
 
-
 /* 游戏详情 */
 
 .introduction {
@@ -578,12 +577,12 @@ article:lang(en) h4 {
 }
 
 .platforms {
-    height: 40px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    column-gap: var(--keyline);
-    margin: 8px 0;
+    column-gap: 24px;
+    padding: 8px 0;
+    margin-top: 8px;
     break-after: column;
 }
 
@@ -695,7 +694,7 @@ article:lang(en) h4 {
   响应式
 \*------------------------------------*/
 
-@media screen and (max-width: 1288px) {
+@media (max-width: 1288px) {
     .preface,
     .introduction,
     .entry article {
@@ -716,23 +715,26 @@ article:lang(en) h4 {
     }
 }
 
-@media screen and (max-width: 1128px) {
+@media (max-width: 1128px) {
     .introduction {
         grid-template-columns: 600px auto;
     }
 }
 
-@media screen and (max-width: 1068px) {
+@media (max-width: 1068px) {
     .introduction {
         grid-template-columns: auto 300px;
     }
 }
 
-@media screen and (max-width: 948px) {
+@media (max-width: 948px) {
     .introduction,
     .entry[class~="detailed"] article {
         display: flex;
         flex-direction: column;
+    }
+    .introduction {
+        margin-top: var(--keyline);
     }
     :is(.introduction, .entry[class~="detailed"]) .description {
         order: 1;
@@ -758,7 +760,6 @@ article:lang(en) h4 {
         position: relative;
         align-self: stretch;
         display: block;
-        column-count: 2;
         column-gap: var(--main-column-gap);
     }
     .introduction .resources {
@@ -769,7 +770,13 @@ article:lang(en) h4 {
     }
 }
 
-@media screen and (max-width: 888px) {
+@media (max-width: 948px) and (min-width: 768px) {
+    .resources {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 888px) {
     .preface {
         display: flex;
         flex-direction: column;
@@ -789,7 +796,7 @@ article:lang(en) h4 {
     }
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
     .entry article {
         display: flex;
         flex-direction: column;
@@ -801,15 +808,9 @@ article:lang(en) h4 {
     .entry article > picture img {
         aspect-ratio: 2/1;
     }
-    .resources {
-        display: flex;
-    }
 }
 
-@media screen and (max-width: 648px) {
-    :root {
-        --increment: 56px;
-    }
+@media (max-width: 648px) {
     h1 {
         font-size: 2.8125rem;
         letter-spacing: 0em;
@@ -832,10 +833,31 @@ article:lang(en) h4 {
     }
 }
 
-@media screen and (max-width: 632px) {
+@media (max-width: 648px) and (min-width: 632px) {
+    .version-warning {
+        padding: 0;
+    }
+    .version-warning .container {
+        max-width: calc(var(--main-grid-unit) * 4 / 3 + var(--main-column-gap));
+    }
+    header {
+        width: 100%;
+        max-width: calc(var(--main-grid-unit) * 4 / 3 + var(--main-column-gap));
+    }
+    .entry,
+    .introduction {
+        max-width: calc(var(--main-grid-unit) * 4 / 3 + var(--main-column-gap));
+        padding: 0;
+    }
 }
 
-@media screen and (max-width: 488px) {
+@media (max-width: 632px) {
+    :root {
+        --increment: 56px;
+    }
+}
+
+@media (max-width: 488px) {
     .entry[class~="detailed"] .description,
     .introduction .description {
         font-size: 1rem;
@@ -849,7 +871,7 @@ article:lang(en) h4 {
     }
 }
 
-@media screen and (max-width: 472px) {
+@media (max-width: 472px) {
     .version-warning {
         padding: 0;
     }
@@ -870,14 +892,13 @@ article:lang(en) h4 {
     .introduction {
         max-width: var(--main-grid-unit);
         padding: 0;
-        margin-top: var(--keyline);
     }
     .labels {
         column-count: 1;
     }
 }
 
-@media screen and (max-width: 408px) {
+@media (max-width: 408px) {
     header {
         margin-top: 8px;
     }
@@ -889,9 +910,7 @@ article:lang(en) h4 {
         width: auto;
         margin-top: 20px;
     }
-    .introduction {
-        padding: 0 var(--keyline);
-    }
+    
     .preface article {
         order: 3;
     }
@@ -916,7 +935,7 @@ article:lang(en) h4 {
     }
 }
 
-@media screen and (max-width: 392px) {
+@media (max-width: 392px) {
     :root {
         --keyline: 16px;
     }
@@ -927,6 +946,9 @@ article:lang(en) h4 {
         width: calc(100% - 2 * var(--keyline));
     }
     .entry {
+        padding: 0 var(--keyline);
+    }
+    .introduction {
         padding: 0 var(--keyline);
     }
 }
