@@ -102,39 +102,12 @@ ul {
 }
 
 @font-face {
-    font-family: "Material Icons";
-    font-style: normal;
-    font-weight: 400;
-    src: url(https://fonts.gstatic.com/s/materialicons/v78/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format("woff2");
+    font-family: "FGI-Icons";
+    src: url("../resources/FGI-Icons.woff") format("woff");
 }
 
-@font-face {
-    font-family: "Material Icons Outlined";
-    font-style: normal;
-    font-weight: 400;
-    src: url(https://fonts.gstatic.com/s/materialiconsoutlined/v46/gok-H7zzDkdnRel8-DQ6KAXJ69wP1tGnf4ZGhUce.woff2) format("woff2");
-}
-
-@font-face {
-    font-family: "Extra Material Icons";
-    font-style: normal;
-    font-weight: 400;
-    src: url(../resources/extra-material-icons.woff) format("woff");
-}
-
-.material-icons {
-    font-family: "Material Icons";
-}
-
-.material-icons-outlined {
-    font-family: "Material Icons Outlined";
-}
-
-.extra-material-icons {
-    font-family: "Extra Material Icons";
-}
-
-:where(.material-icons, .material-icons-outlined, .extra-material-icons) {
+.icon {
+    font-family: "FGI-Icons";
     font-weight: normal;
     font-style: normal;
     font-size: 24px;
@@ -145,11 +118,10 @@ ul {
     white-space: nowrap;
     word-wrap: normal;
     direction: ltr;
-    font-feature-settings: "liga";
 }
 
-:where(.material-icons, .material-icons-outlined, .extra-material-icons)::before {
-    content: attr(data-icon-name);
+.icon::before {
+    content: attr(data-icon);
 }
 
 /*------------------------------------*\
@@ -338,7 +310,7 @@ footer {
     padding: 0 var(--increment);
 }
 
-footer p > a span {
+footer p .icon {
     font-size: 18px;
     vertical-align: text-top;
     margin-right: 6px;
@@ -910,7 +882,7 @@ article:lang(en) h4 {
         width: auto;
         margin-top: 20px;
     }
-    
+
     .preface article {
         order: 3;
     }
