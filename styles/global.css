@@ -229,7 +229,6 @@ ul {
 
 .activated {
     font-weight: bold;
-    color: var(--activated-text-color);
 }
 
 body > hr {
