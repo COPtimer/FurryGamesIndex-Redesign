@@ -49,6 +49,12 @@ button {
     cursor: pointer;
 }
 
+code {
+    padding: 2px 4px;
+    background-color: var(--accent-background-color);
+    border-radius: 2px;
+}
+
 dl,
 dd {
     margin: 0;
@@ -711,7 +717,8 @@ article:lang(en) h4 {
 /* 首选项*/
 
 .preferences,
-.languages {
+.languages,
+.faq {
     width: min(calc(100% - 2 * var(--increment)), 100%);
     max-width: calc(3 * var(--main-grid-unit) + 2 * var(--main-column-gap));
     display: grid;
@@ -723,6 +730,26 @@ article:lang(en) h4 {
 :lang(zh) .preferences h2 {
     font-weight: bold;
     margin-bottom: 22px;
+}
+
+/* 常见问题*/
+
+.faq {
+    user-select: text;
+}
+
+.faq section:not(:last-of-type) {
+    margin-bottom: 40px;
+}
+
+.faq h2 {
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+.faq h3 {
+    font-weight: bold;
+    margin-bottom: 9px;
 }
 
 /* 语言*/
@@ -802,6 +829,7 @@ article:lang(en) h4 {
         --activated-text-color: var(--light-blue-800);
         --primary-background-color: var(--grey-50);
         --secondary-background-color: var(--blue-grey-50);
+        --accent-background-color: var(--blue-grey-50);
         --warning-text-color: var(--deep-orange-a700);
     }
 }
@@ -819,6 +847,7 @@ article:lang(en) h4 {
         --activated-text-color: var(--light-blue-500);
         --primary-background-color: var(--grey-900);
         --secondary-background-color: var(--blue-grey-950);
+        --accent-background-color: var(--blue-grey-800);
         --warning-text-color: var(--deep-orange-a400);
     }
 }
@@ -1052,7 +1081,8 @@ article:lang(en) h4 {
     body > hr,
     footer,
     .preferences,
-    .languages {
+    .languages,
+    .faq {
         width: calc(100% - 2 * var(--keyline));
         max-width: var(--main-grid-unit);
         padding: 0;
@@ -1112,7 +1142,6 @@ article:lang(en) h4 {
     }
     .preface nav span {
         font-size: 24px;
-        padding-right: 32px;
     }
     body > hr {
         max-width: calc(100% - 2 * var(--keyline));
