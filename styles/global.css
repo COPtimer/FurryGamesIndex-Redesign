@@ -279,24 +279,33 @@ header nav {
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 17px 0;
-    gap: 8px var(--main-column-gap);
+    row-gap: 8px;
+}
+
+header h3 {
+    margin-right: var(--main-column-gap);
 }
 
 header ul {
     display: flex;
-    column-gap: var(--keyline);
+    row-gap: 4px;
     align-items: center;
     flex-wrap: wrap;
-    row-gap: 4px;
+}
+
+header li:not(:last-of-type) {
+    margin-right: var(--keyline);
 }
 
 header a {
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: start;
     align-items: center;
-    column-gap: 4px;
+    column-gap: 8px;
 }
 
-header span {
+header .icon {
     font-size: 18px;
 }
 
@@ -370,30 +379,32 @@ h2 {
 }
 
 .preface nav a {
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: start;
     align-items: center;
     padding: 10px 0;
+    column-gap: 20px;
 }
 
 .preface nav span {
     font-size: 36px;
-    padding-right: 20px;
 }
 
 /* 所有游戏 */
 
 .entry {
     max-width: calc(3 * var(--main-grid-unit) + 2 * var(--main-column-gap));
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-auto-flow: row;
     margin: var(--main-column-gap) 0;
     padding: 0 var(--increment);
     row-gap: 24px;
 }
 
 .category {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-auto-flow: row;
     row-gap: var(--keyline);
     margin-bottom: var(--keyline);
 }
@@ -406,9 +417,12 @@ h2 {
 
 .category ul {
     display: flex;
-    column-gap: 16px;
-    row-gap: 8px;
     flex-wrap: wrap;
+}
+
+.category ul li:not(:last-of-type) {
+    margin-right: 16px;
+    margin-bottom: 8px;
 }
 
 .entry article {
@@ -521,21 +535,27 @@ article:lang(en) h4 {
 .labels div {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
     break-inside: avoid-column;
 }
 
 .labels div:not(:last-of-type) {
-    margin-bottom: 12px;
+    margin-bottom: 4px;
 }
 
 .labels dt {
     width: 100%;
+    margin-bottom: 8px;
+}
+
+.labels dd:not(:last-of-type) {
+    margin-right: 3px;
+    margin-bottom: 8px;
 }
 
 .staff {
     grid-column: span 2;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     column-gap: var(--main-column-gap);
     margin-bottom: var(--main-column-gap);
 }
@@ -552,7 +572,9 @@ article:lang(en) h4 {
 }
 
 .staff li {
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: start;
     align-items: center;
     column-gap: 20px;
 }
@@ -613,7 +635,8 @@ article:lang(en) h4 {
 }
 
 .platforms {
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
     justify-content: flex-end;
     align-items: center;
     column-gap: 24px;
@@ -623,7 +646,9 @@ article:lang(en) h4 {
 }
 
 :is(.resources, .author ul) li {
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: start;
     align-items: center;
     padding: 7px 0;
     column-gap: 20px;
@@ -631,7 +656,9 @@ article:lang(en) h4 {
 }
 
 :is(.resources, .author ul, .languages ul) a {
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: start;
     align-items: center;
     column-gap: 20px;
 }
@@ -650,13 +677,13 @@ article:lang(en) h4 {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    column-gap: var(--keyline);
     user-select: text;
 }
 
 .author .avatar {
     width: var(--increment);
     height: var(--increment);
+    margin-right: var(--keyline);
 }
 
 .author h4 {
@@ -687,8 +714,8 @@ article:lang(en) h4 {
 .languages {
     width: min(calc(100% - 2 * var(--increment)), 100%);
     max-width: calc(3 * var(--main-grid-unit) + 2 * var(--main-column-gap));
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-auto-flow: row;
     row-gap: var(--main-column-gap);
     margin: var(--main-column-gap) 0;
 }
@@ -707,8 +734,8 @@ article:lang(en) h4 {
 }
 
 .languages > ul ul {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-auto-flow: row;
     row-gap: var(--keyline);
 }
 
@@ -1035,7 +1062,8 @@ article:lang(en) h4 {
         padding: 0;
     }
     .staff {
-        flex-direction: column;
+        grid-template-columns: none;
+        grid-auto-flow: row;
         row-gap: 4px;
     }
     .staff .secondary .icon {
@@ -1099,16 +1127,12 @@ article:lang(en) h4 {
     :root {
         --keyline: 16px;
     }
-    .version-warning {
+    .version-warning,
+    .entry,
+    .introduction {
         padding: 0 var(--keyline);
     }
     header {
         width: calc(100% - 2 * var(--keyline));
-    }
-    .entry {
-        padding: 0 var(--keyline);
-    }
-    .introduction {
-        padding: 0 var(--keyline);
     }
 }
