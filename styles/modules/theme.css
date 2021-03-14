@@ -6,11 +6,11 @@
     font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Noto Sans SC", sans-serif;
 }
 
-:lang(zh-Hant) {
+:where(:lang(zh-Hant)) {
     font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Noto Sans TC", sans-serif;
 }
 
-:lang(ja) {
+:where(:lang(ja)) {
     font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Noto Sans JP", sans-serif;
 }
 

@@ -18,11 +18,13 @@ body {
     margin: 0;
     color: var(--primary-text-color);
     background-color: var(--primary-background-color);
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+    font-family: -apple-system, BlinkMacSystemFont, "Roboto", Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
     font-size: 16px;
     line-height: 1;
     user-select: none;
 }
+
+/* 链接 */
 
 a {
     text-decoration: none;
@@ -38,10 +40,7 @@ dd a {
     border: 1px solid currentColor;
 }
 
-a:hover,
-button:hover {
-    color: var(--accent-text-color-alt);
-}
+/* 按钮 */
 
 button {
     appearance: none;
@@ -51,20 +50,57 @@ button {
     cursor: pointer;
 }
 
+/* 代码块 */
+
 code {
     padding: 2px 4px;
     background-color: var(--accent-background-color);
     border-radius: 2px;
 }
 
-dl,
-dd {
+/* 标签 */
+
+dl {
     margin: 0;
 }
 
-dd {
-    display: flex;
+dt {
+    flex-basis: 100%;
+    margin-bottom: 4px;
 }
+
+dd {
+    display: inline-flex;
+    margin: 0;
+    margin-bottom: 4px;
+}
+
+dd:not(:last-of-type) {
+    margin-right: 4px;
+}
+
+/* 分隔线 */
+
+hr {
+    margin: 0;
+    align-self: stretch;
+    border-color: var(--divider-color);
+}
+
+/* 图片 */
+
+picture {
+    display: flex;
+    flex-direction: column;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* 标题 */
 
 h1,
 h2,
@@ -77,17 +113,7 @@ h6 {
     user-select: text;
 }
 
-hr {
-    margin: 0;
-    align-self: stretch;
-    border-color: var(--divider-color);
-}
-
-img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
+/* 文段 */
 
 p {
     margin: 0;
@@ -97,10 +123,7 @@ p:not(:last-of-type) {
     margin-bottom: 7px;
 }
 
-picture {
-    display: flex;
-    flex-direction: column;
-}
+/* 列表 */
 
 ul {
     margin: 0;
@@ -108,10 +131,23 @@ ul {
     list-style-type: none;
 }
 
+/* 交互效果 */
+
+a:hover,
+button:hover {
+    color: var(--accent-text-color-alt);
+}
+
+.activated {
+    font-weight: 700;
+}
+
 ::selection {
     color: #ffffff;
     background-color: var(--blue-grey-500);
 }
+
+/* 图标字体 */
 
 @font-face {
     font-family: "FGI-Icons";
@@ -141,17 +177,15 @@ ul {
   正文
 \*------------------------------------*/
 
-.activated {
-    font-weight: 700;
-}
-
 body > hr {
     align-self: center;
     width: 100%;
     max-width: calc(3 * var(--main-grid-unit) + 2 * var(--main-column-gap));
 }
 
-/* 提示栏 */
+/*------------------------------------*\
+  提示栏
+\*------------------------------------*/
 
 .version-warning {
     align-self: stretch;
@@ -179,7 +213,9 @@ body > hr {
     margin: 13px 0;
 }
 
-/* 导航顶栏 */
+/*------------------------------------*\
+  导航顶栏
+\*------------------------------------*/
 
 header {
     width: calc(100% - 2 * var(--increment));
@@ -222,7 +258,9 @@ header .icon {
     font-size: 18px;
 }
 
-/* 页脚 */
+/*------------------------------------*\
+  页脚
+\*------------------------------------*/
 
 footer {
     display: grid;
@@ -248,7 +286,9 @@ address a {
     padding: 12px;
 }
 
-/* 主页 */
+/*------------------------------------*\
+  主页
+\*------------------------------------*/
 
 .preface {
     display: grid;
@@ -308,7 +348,9 @@ h2 {
     font-size: 36px;
 }
 
-/* 所有游戏 */
+/*------------------------------------*\
+  游戏列表
+\*------------------------------------*/
 
 .entry {
     max-width: calc(3 * var(--main-grid-unit) + 2 * var(--main-column-gap));
@@ -383,7 +425,9 @@ article:lang(en) h4 {
     line-height: var(--headline-leading);
 }
 
-/* 游戏详情 */
+/*------------------------------------*\
+  游戏详情
+\*------------------------------------*/
 
 .introduction {
     display: grid;
@@ -456,16 +500,6 @@ article:lang(en) h4 {
 
 .labels div:not(:last-of-type) {
     margin-bottom: 8px;
-}
-
-.labels dt {
-    width: 100%;
-    margin-bottom: 4px;
-}
-
-.labels dd:not(:last-of-type) {
-    margin-right: 4px;
-    margin-bottom: 4px;
 }
 
 .staff {
@@ -626,7 +660,9 @@ article:lang(en) h4 {
     column-gap: 8px;
 }
 
-/* 首选项*/
+/*------------------------------------*\
+  首选项
+\*------------------------------------*/
 
 .preferences,
 .languages,
@@ -644,7 +680,9 @@ article:lang(en) h4 {
     margin-bottom: 22px;
 }
 
-/* 常见问题*/
+/*------------------------------------*\
+  常见问题
+\*------------------------------------*/
 
 .faq {
     user-select: text;
@@ -664,7 +702,9 @@ article:lang(en) h4 {
     margin-bottom: 9px;
 }
 
-/* 语言*/
+/*------------------------------------*\
+  语言
+\*------------------------------------*/
 
 .languages > ul {
     display: grid;
