@@ -321,25 +321,23 @@ h2 {
 
 .category {
     display: grid;
-    grid-auto-flow: row;
-    row-gap: var(--keyline);
-    margin-bottom: var(--keyline);
+    grid-template-columns: repeat(3, auto);
+    gap: var(--main-column-gap);
+    align-items: start;
+    margin-bottom: var(--main-column-gap);
+    word-break: keep-all;
 }
 
 .category > li {
     display: grid;
+    grid-auto-flow: row;
+    row-gap: 4px;
+}
+
+.category > li:first-of-type ul {
+    display: grid;
     grid-template-columns: max-content auto;
-    column-gap: 16px;
-}
-
-.category ul {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.category ul li:not(:last-of-type) {
-    margin-right: 16px;
-    margin-bottom: 8px;
+    column-gap: var(--main-column-gap);
 }
 
 .entry article {
@@ -544,11 +542,13 @@ article:lang(en) h4 {
     grid-column-end: -1;
     grid-row-start: 1;
     grid-row-end: -1;
-    top: var(--keyline);
     position: sticky;
     align-self: start;
     display: flex;
     flex-direction: column;
+}
+
+.entry[class~="detailed"] .resources {
     margin-bottom: 20px;
 }
 
@@ -785,6 +785,18 @@ article:lang(en) h4 {
     }
 }
 
+@media (min-width: 949px) {
+    .entry[class~="detailed"] .resources {
+        top: var(--keyline);
+    }
+    .introduction .resources {
+        bottom: 0;
+        align-self: end;
+        min-height: calc(100vh - 2 * var(--keyline));
+        padding-bottom: var(--keyline);
+    }
+}
+
 @media (max-width: 948px) and (min-width: 768px) {
     .resources {
         column-count: 2;
@@ -845,6 +857,9 @@ article:lang(en) h4 {
     }
     .preface nav a:nth-of-type(2) {
         break-after: auto;
+    }
+    .category > li:first-of-type {
+        grid-column: 1/-1;
     }
     footer,
     .languages > ul {
@@ -921,6 +936,10 @@ article:lang(en) h4 {
         max-width: var(--main-grid-unit);
         padding: 0;
     }
+    .category {
+        grid-template-columns: repeat(2, auto);
+        gap: var(--keyline);
+    }
     .staff {
         grid-template-columns: none;
         grid-auto-flow: row;
@@ -993,5 +1012,12 @@ article:lang(en) h4 {
     }
     header {
         width: calc(100% - 2 * var(--keyline));
+    }
+}
+
+@media (max-width: 320px) {
+    .category,
+    .category > li:first-of-type ul {
+        grid-template-columns: auto;
     }
 }
