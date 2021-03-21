@@ -8,7 +8,7 @@
         <meta name="description" content="A project to index furry & kemono games." />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+SC:wght@400;700&family=Noto+Sans+TC:wght@400;700&family=Roboto+Condensed&family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="./styles/global.css" />
+        <link rel="stylesheet" href="../styles/global.css" />
     </head>
 
     <body>
@@ -26,31 +26,31 @@
                 <h3 class="title">Furry Games Index</h3>
                 <ul>
                     <li>
-                        <a href="./en/index.html">
+                        <a href="./index.html">
                             <span class="icon" data-icon="home_outline" aria-hidden="true"></span>
                             Home
                         </a>
                     </li>
                     <li>
-                        <a href="./en/list.html">
+                        <a href="./list.html">
                             <span class="icon" data-icon="list" aria-hidden="true"></span>
                             All games
                         </a>
                     </li>
                     <li>
-                        <a href="./en/search.html">
+                        <a href="./search.html">
                             <span class="icon" data-icon="search" aria-hidden="true"></span>
                             Search
                         </a>
                     </li>
                     <li>
-                        <a href="./en/faq.html">
+                        <a href="./faq.html" class="activated">
                             <span class="icon" data-icon="help_outline" aria-hidden="true"></span>
                             FAQ
                         </a>
                     </li>
                     <li>
-                        <a href="./languages.html" class="activated">
+                        <a href="../languages.html">
                             <span class="icon" data-icon="language" aria-hidden="true"></span>
                             Languages
                         </a>
@@ -58,33 +58,44 @@
                 </ul>
             </nav>
         </header>
-        <main class="languages">
-            <h1>Languages</h1>
-            <p class="subheading">Please help us translate FurryGamesIndex. If you want to see that your language listed in here, don't hesitate to contact the maintainer via <a href="https://github.com/FurryGamesIndex/games">Github</a> or <a href="https://t.me/UtopicPanther">Telegram</a>!</p>
-            <ul class="display1">
-                <li>
-                    <a href="./en/index.html">
-                        <span class="icon" data-icon="arrow_forward" aria-hidden="true"></span>
-                        English
-                    </a>
-                </li>
-                <li>
-                    <ul>
-                        <li lang="zh-Hans">
-                            <a href="./zh-Hans/index.html">
-                                <span class="icon" data-icon="arrow_forward" aria-hidden="true"></span>
-                                简体中文
-                            </a>
-                        </li>
-                        <li lang="zh-Hant">
-                            <a href="./zh-tw/index.html">
-                                <span class="icon" data-icon="arrow_forward" aria-hidden="true"></span>
-                                繁體中文
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
+        <main class="faq subheading">
+            <h1>Frequently Asked Questions</h1>
+            <article>
+                <h2>General questions about FGI</h2>
+                <section>
+                    <h3>I found problem in pages or link failure</h3>
+                    <p>Welcome <a href="https://github.com/FurryGamesIndex/games/blob/master/doc/Contribute.zh-cn.md">participate in FGI contributions</a>.</p>
+                </section>
+                <section>
+                    <h3>Do you accept straight games?</h3>
+                    <p>Actually yes. But most of the volunteers who contributed to this project are gay, which resulted in more gay games appearing on the list.</p>
+                    <p>Even so, we've still added some straight games. If you'd like to see your favorite straight games appear on this list, don't hesitate to contribute now.</p>
+                    <p>For those who want to filter out some of the sexual orientation, we offer two tags, <code>type:bara</code> for games with gay contents and <code>type:yuri</code> for games with lesbian contents. This can be used in conjunction with the "How can I make full use of the search function of this site" below.</p>
+                </section>
+                <section>
+                    <h3>Do you accept "Kemonomimi" games?</h3>
+                    <p>Never. Also, if a game contains both Kemonomimi and acceptable furries, Kemonomimi will be identified as "<a href="https://furrygames.top/en/search.html?tagx?male:humankind%20or%20female:humankind">humankind</a>".</p>
+                </section>
+                <section>
+                    <h3>How can I make full use of the "search" function of this site?</h3>
+                    <p><a href="search_help.html">See our new Search Help page</a>.</p>
+                </section>
+                <section>
+                    <h3>Is there a downloadable offline version?</h3>
+                    <p>Yes, we provide offline version for furries who want to save this list locally.</p>
+                    <p>The external images will included in offline version.</p>
+                    <p>uild script is releasing offline version everyday, you can go to <a href="https://github.com/FurryGamesIndex/games/releases/tag/_gh_assets">here</a> to download one.</p>
+                </section>
+            </article>
+            <hr />
+            <article>
+                <h2>Questions about contributions</h2>
+                <section>
+                    <h3>Can I choose to contribute anonymously?</h3>
+                    <p>Although not recommended, we allow anonymous contributions, and we respect the requests of contributors. At the same time, if one day an anonymous contributor changes his mind and wants to add his name and contact information to the "Contributor List", we are very welcome and can add the list is ready for you!</p>
+                    <p>Please note that even if you contribute anonymously, when you use Github Pull Request, your Github account will still be automatically recorded. (If you have not set "Keep my email addresses private", your email address may also be leaked)</p>
+                </section>
+            </article>
         </main>
         <hr />
         <footer class="body1">
@@ -95,12 +106,15 @@
             </section>
             <section>
                 <p>
-                    <a href="./en/preferences.html"><span class="icon" data-icon="settings" aria-hidden="true"></span>Site Preferences</a>
+                    <a href="../languages.html"><span class="icon" data-icon="language" aria-hidden="true"></span>Switch Language</a>
+                </p>
+                <p>
+                    <a href="./preferences.html"><span class="icon" data-icon="settings" aria-hidden="true"></span>Site Preferences</a>
                 </p>
                 <p>Found something missing or wrong? want to add new games? Or want to improve FurryGamesIndex? <a href="https://github.com/FurryGamesIndex/games/blob/master/doc/Get-Involved.en.md">Get Involved</a> now!</p>
                 <address>
                     Contact FurryGamesIndex project by<br />
-                    <a title="电子邮箱" href="mailto:webmaster@furrygames.top"><span class="icon" data-icon="email" aria-hidden="true"></span></a>
+                    <a title="Email" href="mailto:webmaster@furrygames.top"><span class="icon" data-icon="email" aria-hidden="true"></span></a>
                     <a title="Telegram" href="https://t.me/FurryGamesIndex"><span class="icon" data-icon="telegram" aria-hidden="true"></span></a>
                     <a title="Github" href="https://github.com/FurryGamesIndex/games"><span class="icon" data-icon="github" aria-hidden="true"></span></a>
                 </address>
