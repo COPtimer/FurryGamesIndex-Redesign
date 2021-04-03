@@ -174,10 +174,10 @@ code {
         --accent-text-color: var(--light-blue-900);
         --accent-text-color-alt: var(--light-blue-700);
         --activated-text-color: var(--light-blue-800);
+        --warning-text-color: var(--deep-orange-a700);
         --primary-background-color: var(--grey-50);
         --secondary-background-color: var(--blue-grey-50);
         --accent-background-color: var(--blue-grey-50);
-        --warning-text-color: var(--deep-orange-a700);
     }
 }
 
@@ -192,9 +192,9 @@ code {
         --accent-text-color: var(--light-blue-600);
         --accent-text-color-alt: var(--light-blue-400);
         --activated-text-color: var(--light-blue-500);
+        --warning-text-color: var(--deep-orange-a400);
         --primary-background-color: var(--grey-900);
         --secondary-background-color: var(--blue-grey-950);
         --accent-background-color: var(--blue-grey-800);
-        --warning-text-color: var(--deep-orange-a400);
     }
 }

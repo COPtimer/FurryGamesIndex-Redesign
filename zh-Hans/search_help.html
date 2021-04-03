@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>兽人控游戏索引</title>
+        <meta name="keywords" content="furry, game, kemono, 兽人, 兽人控, 兽迷, 毛茸茸, 游戏, 兽游" />
+        <meta name="description" content="「兽人控游戏索引」致力于收集和索引 Furry 游戏" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+SC:wght@400;700&family=Noto+Sans+TC:wght@400;700&family=Roboto+Condensed&family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="../styles/global.css" />
+    </head>
+
+    <body>
+        <aside class="version-warning">
+            <div class="container">
+                <span class="icon" data-icon="warning" aria-hidden="true"></span>
+                <p class="body1">
+                    这是 FGI-Redesign，一个以设计师视角创作的 FGI 实验性预览构建，可能包含很多当前不稳定或最终被否决的更改。<br />
+                    <a href="https://furrygames.top/">点击此处切换到稳定版本</a>
+                </p>
+            </div>
+        </aside>
+        <header>
+            <nav class="subheading">
+                <h3 class="title">兽人控游戏索引</h3>
+                <ul>
+                    <li>
+                        <a href="./index.html">
+                            <span class="icon" data-icon="home_outline" aria-hidden="true"></span>
+                            主页
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./list.html">
+                            <span class="icon" data-icon="list" aria-hidden="true"></span>
+                            所有游戏
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./search.html">
+                            <span class="icon" data-icon="search" aria-hidden="true"></span>
+                            搜索
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./faq.html">
+                            <span class="icon" data-icon="help_outline" aria-hidden="true"></span>
+                            常见问题
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../languages.html">
+                            <span class="icon" data-icon="language" aria-hidden="true"></span>
+                            语言
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main class="search-help subheading">
+            <h1>搜索帮助</h1>
+            <article>
+                <p>“搜索标题” 和 “搜索标题和描述” 将尝试匹配游戏标题或描述中的相关关键字，然后显示匹配结果。这应该是很直观的而不需要过多解释。</p>
+                <p>“搜索标签” 是 FGI 为用户提供的更强大的搜索功能，此帮助则通过给出示例的方式来说明如何使用此功能。</p>
+            </article>
+            <article>
+                <h2>标签系统</h2>
+                <p>在开始之前，简单说明一下 FGI 的标签系统是有必要的。</p>
+                <p>
+                    FGI 的标签包含两部分，可选的 “命名空间” 和 “值”。例如 <code>male:dog</code><a target="_blank" href="search.html?tagx?male:dog"><span class="icon" data-icon="search" aria-hidden="true"></span></a> 标签，命名空间是 <code>male</code>，值则为 <code>dog</code>。
+                </p>
+                <p>
+                    命名空间是可选的，因此 <code>dog</code><a target="_blank" href="search.html?tagx?dog"><span class="icon" data-icon="search" aria-hidden="true"></span></a> 也是合法的标签。当不带命名空间时，表示不对命名空间进行限定，带有 <code>male:dog</code> 或 <code>female:dog</code><a target="_blank" href="search.html?tagx?female:dog"><span class="icon" data-icon="search" aria-hidden="true"></span></a> 或二者都包含的游戏将被认定为包含 <code>dog</code> 标签。
+                </p>
+                <p>
+                    标签的值部分可能有一个或多个“别名”，以遍于搜索，例如 <code>netorare</code><a target="_blank" href="search.html?tagx?netorare"><span class="icon" data-icon="search" aria-hidden="true"></span></a> 标签有一个别名 <code>ntr</code><a target="_blank" href="search.html?tagx?ntr"><span class="icon" data-icon="search" aria-hidden="true"></span></a>。你可以使用 <code>ntr</code> 代替 <code>netorare</code>，用 <code>male:ntr</code><a target="_blank" href="search.html?tagx?male:ntr"><span class="icon" data-icon="search" aria-hidden="true"></span></a> 代替 <code>male:netorare</code><a target="_blank" href="search.html?tagx?male:netorare"><span class="icon" data-icon="search" aria-hidden="true"></span></a>，等。
+                </p>
+                <p>标签之间还可能存在依赖关系，但这对于搜索来讲无关紧要。</p>
+                <p>
+                    <strong>你可以从<a href="https://github.com/FurryGamesIndex/games/blob/master/doc/tags.zh-cn.md">这里</a>查看 FGI 当前支持的全部标签的列表。如果你发现某个游戏缺失它该有的标签，欢迎参与贡献。如果你认为应该添加更多标签，欢迎联系我们。</strong>
+                </p>
+            </article>
+            <hr />
+            <article>
+                <h2>基本的搜索</h2>
+                <section>
+                    <h3>搜索单一标签</h3>
+                    <dl>
+                        <dt>
+                            <code>dog</code><a target="_blank" href="search.html?tagx?dog"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                        </dt>
+                        <dd>搜索任意命名空间中包含 <code>dog</code> 标签的游戏。此示例将搜索含有犬兽人的游戏。</dd>
+                        <dt>
+                            <code>felidae</code><a target="_blank" href="search.html?tagx?felidae"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                        </dt>
+                        <dd>搜索在任意命名空间中含有 <code>felidae</code> 标签的游戏。此示例将搜索含有猫科兽人的游戏。</dd>
+                    </dl>
+                </section>
+                <section>
+                    <h3>对标签所在命名空间进行限定</h3>
+                    <dl>
+                        <dt>
+                            <code>male:dog</code><a target="_blank" href="search.html?tagx?male:dog"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                        </dt>
+                        <dd>搜索在 <code>male</code> 命名空间包含 <code>dog</code> 标签的游戏。此示例将搜索含有雄性犬兽人的游戏。</dd>
+                    </dl>
+                </section>
+                <section>
+                    <h3>何时需要引号</h3>
+                    <p>如果你使用的标签中包括空格，你<strong>必须</strong>将其放置在双引号之中。如果标签不包含空格，则可以用双引号也可以不用。</p>
+                    <dl>
+                        <div>
+                            <dt>
+                                <code>type:visual-novel</code><a target="_blank" href="search.html?tagx?type:visual-novel"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                            </dt>
+                            <dt>
+                                <code>"type:visual-novel"</code><a target="_blank" href='search.html?tagx?"type:visual-novel"'><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                            </dt>
+                            <dd>搜索在 <code>type</code> 命名空间包含 <code>visual-novel</code> 标签的游戏。此示例将搜索视觉小说游戏。此时两种写法等价。</dd>
+                        </div>
+                        <dt>
+                            <code>"author:The Echo Project"</code><a target="_blank" href='search.html?tagx?"author:The Echo Project"'><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                        </dt>
+                        <dd>搜索在 <code>author</code> 命名空间包含 <code>"The Echo Project"</code> 标签的游戏。此示例将搜索由 Echo Project 开发的游戏。使用 <code>author:The Echo Project</code>（不带引号）搜索将不按预期工作。</dd>
+                    </dl>
+                </section>
+                <section>
+                    <h3>如果需要排除标签</h3>
+                    <dl>
+                        <dt>
+                            <code>not misc:work-in-process</code><a target="_blank" href="search.html?tagx?not misc:work-in-process"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                        </dt>
+                        <dd>搜索在 <code>misc</code> 命名空间不包含 <code>work-in-process</code> 标签的游戏。此示例将搜索已正式发布（而不是仍在开发中的）游戏。</dd>
+                        <dt>
+                            <code>not yiff</code><a target="_blank" href="search.html?tagx?not yiff"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                        </dt>
+                        <dd>搜索在任意命名空间不包含 <code>yiff</code> 标签的游戏。此示例将排除含有成人内容的游戏。<code>yiff</code> 标签只存在于 <code>type</code> 命名空间。因此对于此标签而言，<code>type:yiff</code> 和 <code>yiff</code> 等效。</dd>
+                    </dl>
+                </section>
+            </article>
+            <hr />
+            <article>
+                <h2>搜索多个标签</h2>
+                <section>
+                    <h3>与，或，非</h3>
+                    <dl>
+                        <div>
+                            <dt>
+                                <code>misc:3d lang:en wolf</code><a target="_blank" href="search.html?tagx?misc:3d lang:en wolf"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                            </dt>
+                            <dt>
+                                <code>misc:3d and lang:en and wolf</code><a target="_blank" href="search.html?tagx?misc:3d and lang:en and wolf"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                            </dt>
+                            <dd>搜索同时含有 <code>misc:3d</code> <code>lang:en</code> <code>wolf</code> 标签的游戏（冒号前表示对命名空间进行限定）。</dd>
+                        </div>
+                        <div>
+                            <dt>
+                                <code>misc:freeware platform:android type:bara</code><a target="_blank" href="search.html?tagx?misc:freeware platform:android type:bara"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                            </dt>
+                            <dt>
+                                <code>misc:freeware and platform:android and type:bara</code><a target="_blank" href="search.html?tagx?misc:freeware and platform:android and type:bara"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                            </dt>
+                            <dd>搜索同时含有 <code>misc:freeware</code> <code>platform:android</code> <code>type:bara</code> 标签的游戏（冒号前表示对命名空间进行限定）。</dd>
+                        </div>
+                        <dt>
+                            <code>canine or dragon</code><a target="_blank" href="search.html?tagx?canine or dragon"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                        </dt>
+                        <dd>搜索含有 <code>canine</code> 标签或含有 <code>dragon</code> 标签或二者都含有的游戏。</dd>
+                        <dt>
+                            <code>male:canine or female:canine</code><a target="_blank" href="search.html?tagx?male:canine or female:canine"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                        </dt>
+                        <dd>搜索含有 <code>male:canine</code> 标签或含有 <code>female:canine</code> 标签或二者都含有的游戏（在这个示例中，这个表达式实际上与搜索 <code>canine</code> 等效）。</dd>
+                        <dt>
+                            <code>male:felidae and visual-novel not "author:Studio Klondike"</code><a target="_blank" href='search.html?tagx?male:felidae and visual-novel not "author:Studio Klondike"'><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                        </dt>
+                        <dd>搜索含有 <code>male:fedidae</code> 标签和 <code>visual-novel</code> 标签，但是不含有 <code>"author:Studio Klondike"</code> 标签的游戏。此示例将搜索主要角色中包括雄性猫科兽人并且类型是视觉小说，但作者不是 <code>“Studio Klondike”</code> 的游戏。</dd>
+                    </dl>
+                </section>
+                <section>
+                    <h3>改变优先级</h3>
+                    <p>表达式的优先级为从左到右运算，你可以添加括号来强制改变优先级。括号作为一个整体的部分与父级参与运算。</p>
+                    <p>
+                        考虑 <code>male:canine and type:visual-novel or type:dating-sim</code><a target="_blank" href="search.html?tagx?male:canine and type:visual-novel or type:dating-sim"><span class="icon" data-icon="search" aria-hidden="true"></span></a> 表达式先查找含有 <code>male:canine</code><a target="_blank" href="search.html?tagx?male:canine"><span class="icon" data-icon="search" aria-hidden="true"></span></a> 的游戏，然后从中筛选含有 <code>type:visual-novel</code><a target="_blank" href="search.html?tagx?type:visual-novel"><span class="icon" data-icon="search" aria-hidden="true"></span></a> 的游戏，再加上从全部游戏中含有 <code>type:dating-sim</code><a target="_blank" href="search.html?tagx?type:dating-sim"><span class="icon" data-icon="search" aria-hidden="true"></span></a> 的游戏。因此它将搜索含有雄性犬科兽人的视觉小说或（不一定要包含雄性犬科兽人）的约会模拟器。如果你是要查找含有雄性犬科兽人的视觉小说或约会模拟器，这显然不是你想要的。解决办法是先让搜索引擎搜索 <code>type:visual-novel or type:dating-sim</code><a target="_blank" href="search.html?tagx?type:visual-novel or type:dating-sim"><span class="icon" data-icon="search" aria-hidden="true"></span></a>，然后将结果与 <code>male:canine</code> 做与运算。我们可以按从左到右的顺序重写表达式，也可以用括号改变优先级。
+                    </p>
+                    <dl>
+                        <dt>
+                            <code>male:canine and (type:visual-novel or type:dating-sim)</code><a target="_blank" href="search.html?tagx?male:canine and (type:visual-novel or type:dating-sim)"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                        </dt>
+                        <dd>这个表达式将先找到“视觉小说”或“约会模拟器”的游戏，再在这些游戏里筛选出包含雄性犬科兽人的游戏。</dd>
+                        <dt>
+                            <code>misc:3d and (lang:en or lang:zh or lang:en-unofficial or lang:zh-unofficial) not type:yiff</code><a target="_blank" href="search.html?tagx?misc:3d and (lang:en or lang:zh or lang:en-unofficial or lang:zh-unofficial) not type:yiff"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                        </dt>
+                        <dd>搜索支持英文或中文语言的全年龄向 3D 风格游戏。</dd>
+                        <dt>
+                            <code>A and (B or (C and D) not (E or (F and G)))</code><a target="_blank" href="search.html?tagx?A and (B or (C and D) not (E or (F and G)))"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                        </dt>
+                        <dd>这个示例仅表示表示括号可以存在多级。最大层级数量与具体浏览器有关。</dd>
+                    </dl>
+                </section>
+                <section>
+                    <h3>改变排序</h3>
+                    <dl>
+                        <dt>
+                            <code>@reverse</code><a target="_blank" href="search.html?tagx?@reverse"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                        </dt>
+                        <dd>搜索全部游戏，但结果以 Z-A 的字母顺序排序。（A-Z 顺序的反向）</dd>
+                        <dt>
+                            <code>@lastmod</code><a target="_blank" href="search.html?tagx?@lastmod"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                        </dt>
+                        <dd>搜索全部游戏，但以最近修改顺序排序，最近修改的游戏排序靠前。</dd>
+                        <dt>
+                            <code>@lastmod @reverse</code><a target="_blank" href="search.html?tagx?@lastmod @reverse"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                        </dt>
+                        <dd>搜索全部游戏，但以最近修改顺序反向排序，最近修改的游戏排序靠后。</dd>
+                        <dt>
+                            <code>misc:freeware @lastmod</code><a target="_blank" href="search.html?tagx?misc:freeware @lastmod"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                        </dt>
+                        <dd>搜索带有 <code>misc:freeware</code> 标签的游戏，但以最近修改顺序反向排序，最近修改的游戏排序靠前。</dd>
+                        <dt>
+                            <code>platform:android or platform:ios @reverse</code><a target="_blank" href="search.html?tagx?platform:android or platform:ios @reverse"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                        </dt>
+                        <dd>搜索 Android 或 iOS 游戏，但结果是 <code>platform:android or platform:ios</code> 搜索结果的反向。</dd>
+                        <dt>
+                            <code>platform:android or (platform:ios @reverse)</code><a target="_blank" href="search.html?tagx?platform:android or (platform:ios @reverse)"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                        </dt>
+                        <dd>搜索 Android 或 iOS 游戏，但<strong>只</strong>含有 <code>platform:ios</code> 标签的游戏将以 Z-A 的字母顺序排序。（A-Z 顺序的反向）</dd>
+                        <dt>
+                            <code>platform:android @lastmod or platform:ios</code><a target="_blank" href="search.html?tagx?platform:android @lastmod or platform:ios"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                        </dt>
+                        <dd>搜索 Android 或 iOS 游戏，但含有 <code>platform:android</code> 标签或二者都含有的游戏将以最近修改顺序排序，最近修改的游戏排序靠前。</dd>
+                        <div>
+                            <dt>
+                                <code>steam and itchio @lastmod</code><a target="_blank" href="search.html?tagx?steam and itchio @lastmod"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                            </dt>
+                            <dt>
+                                <code>steam itchio @lastmod</code><a target="_blank" href="search.html?tagx?steam itchio @lastmod"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                            </dt>
+                            <dt>
+                                <code>steam @lastmod and itchio</code><a target="_blank" href="search.html?tagx?steam @lastmod and itchio"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                            </dt>
+                            <dt>
+                                <code>steam @lastmod itchio</code><a target="_blank" href="search.html?tagx?steam @lastmod itchio"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                            </dt>
+                            <dd>搜索同时在 itch.io 和 Steam 发布的游戏，但以最近修改顺序排序，最近修改的游戏排序靠前。</dd>
+                        </div>
+                        <div>
+                            <dt>
+                                <code>steam and (itchio @lastmod)</code><a target="_blank" href="search.html?tagx?steam and (itchio @lastmod)"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                            </dt>
+                            <dt>
+                                <code>steam (itchio @lastmod)</code><a target="_blank" href="search.html?tagx?steam (itchio @lastmod)"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                            </dt>
+                            <dd>可能会让用户感到奇怪，但这种写法实际上与 <code>steam and itchio</code> 或 <code>steam itchio</code> 等效。</dd>
+                        </div>
+                    </dl>
+                </section>
+            </article>
+        </main>
+        <hr />
+        <footer class="body1">
+            <section>
+                <p>版权所有 The FurryGamesIndex project，本站点的数据按照<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">创作共用署名-非商业性使用-相同方式共享(CC-BY-NC-SA) 4.0</a>许可。部分数据（如游戏截图）版权归原始权利人所有。我们仅在<a href="https://en.wikipedia.org/wiki/Fair_use">合理使用</a>的前提下发布它们。</p>
+                <p><a href="../privacy-policy.html">隐私权政策</a></p>
+                <p><a href="../credits.html">由开源软件提供动力</a></p>
+            </section>
+            <section>
+                <p>
+                    <a href="../languages.html"><span class="icon" data-icon="language" aria-hidden="true"></span>切换语言</a><br />
+                </p>
+                <p>
+                    <a href="./preferences.html"><span class="icon" data-icon="settings" aria-hidden="true"></span>站点首选项</a>
+                </p>
+                <p>发现缺少了东西或错误？希望添加游戏？或者想帮助改进 FurryGamesIndex？<a href="https://github.com/FurryGamesIndex/games/blob/master/doc/Get-Involved.zh-cn.md">参与其中</a>！</p>
+                <address>
+                    通过以下方式联系“兽人控游戏索引”项目<br />
+                    <a title="电子邮箱" href="mailto:webmaster@furrygames.top"><span class="icon" data-icon="email" aria-hidden="true"></span></a>
+                    <a title="Telegram" href="https://t.me/FurryGamesIndex"><span class="icon" data-icon="telegram" aria-hidden="true"></span></a>
+                    <a title="Github" href="https://github.com/FurryGamesIndex/games"><span class="icon" data-icon="github" aria-hidden="true"></span></a>
+                </address>
+            </section>
+            <section>
+                <p>
+                    <a href="./feed.xml"><span class="icon" data-icon="rss_feed" aria-hidden="true"></span>RSS Feed</a>
+                </p>
+                <p>RSS Feed 将以时间顺序推送最近添加或编辑的 30 个游戏界面</p>
+            </section>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Furry Games Index</title>
+        <meta name="keywords" content="furry, game, kemono" />
+        <meta name="description" content="A project to index furry & kemono games." />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+SC:wght@400;700&family=Noto+Sans+TC:wght@400;700&family=Roboto+Condensed&family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="../styles/global.css" />
+    </head>
+
+    <body>
+        <aside class="version-warning">
+            <div class="container">
+                <span class="icon" data-icon="warning" aria-hidden="true"></span>
+                <p class="body1">
+                    This is FGI-Redesign, an experimental preview build of FGI created from a designer's perspective that may contain many changes that are currently unstable or ultimately rejected.<br />
+                    <a href="https://furrygames.top/">Click here to switch to the stable version</a>
+                </p>
+            </div>
+        </aside>
+        <header>
+            <nav class="subheading">
+                <h3 class="title">Furry Games Index</h3>
+                <ul>
+                    <li>
+                        <a href="./index.html">
+                            <span class="icon" data-icon="home_outline" aria-hidden="true"></span>
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./list.html">
+                            <span class="icon" data-icon="list" aria-hidden="true"></span>
+                            All games
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./search.html">
+                            <span class="icon" data-icon="search" aria-hidden="true"></span>
+                            Search
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./faq.html" class="activated">
+                            <span class="icon" data-icon="help_outline" aria-hidden="true"></span>
+                            FAQ
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../languages.html">
+                            <span class="icon" data-icon="language" aria-hidden="true"></span>
+                            Languages
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main class="search-help subheading">
+            <h1>Search Help</h1>
+            <article>
+                <p>The "Search Title" and "Search Title and Description" will try to match relevant keywords in the game title or description and then display the matching results. This should be very intuitive and does not require much explanation.</p>
+                <p>"Search Tags" is a more powerful search feature that FGI provides to our users, and this help explains how to use this feature by giving examples.</p>
+            </article>
+            <article>
+                <h2>Tagging System</h2>
+                <p>Before we begin, a brief explanation of FGI's tagging system is in order.</p>
+                <p>FGI's tags consist of two parts, an optional "namespace" and a "value". For example, for the <code>male:dog</code><a target="_blank" href="search.html?tagx?male:dog"><span class="icon" data-icon="search" aria-hidden="true"></span></a> tag, the namespace is <code>male</code> and the value is <code>dog</code>.</p>
+                <p>The namespace is optional, so <code>dog</code><a target="_blank" href="search.html?tagx?dog"><span class="icon" data-icon="search" aria-hidden="true"></span></a> is also a valid tag. When the namespace is not specified, it means that the namespace is not considered, and games with <code>male:dog</code> or <code>female:dog</code><a target="_blank" href="search.html?tagx?female:dog"><span class="icon" data-icon="search" aria-hidden="true"></span></a> or both are considered to contain the <code>dog</code> tag.</p>
+                <p>The value portion of the tag may have one or more "aliases", e.g. the <code>netorare</code><a target="_blank" href="search.html?tagx?netorare"><span class="icon" data-icon="search" aria-hidden="true"></span></a> tag has an alias <code>ntr</code><a target="_blank" href="search.html?tagx?ntr"><span class="icon" data-icon="search" aria-hidden="true"></span></a>. You can use <code>ntr</code> instead of <code>netorare</code>, and <code>male:ntr</code><a target="_blank" href="search.html?tagx?male:ntr"><span class="icon" data-icon="search" aria-hidden="true"></span></a> instead of <code>male:netorare</code><a target="_blank" href="search.html?tagx?male:netorare"><span class="icon" data-icon="search" aria-hidden="true"></span></a>, etc.</p>
+                <p>There may also be dependencies between tags, but this is irrelevant for search purposes.</p>
+                <p><strong>You can see a list of all the tags currently supported by FGI from <a href="https://github.com/FurryGamesIndex/games/blob/master/doc/tags.en.md">here</a>. If you find that a game is missing tag(s), feel free to contribute. If you think more tags should be added, feel free to contact us.</strong></p>
+            </article>
+            <hr />
+            <article>
+                <h2>Basic Search</h2>
+                <section>
+                    <h3>Search for a single tag</h3>
+                    <dl>
+                        <dt>
+                            <code>dog</code><a target="_blank" href="search.html?tagx?dog"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                        </dt>
+                        <dd>Search for games with <code>dog</code>  tags in any namespace. This example will search for games that contain dog furries.</dd>
+                        <dt>
+                            <code>felidae</code><a target="_blank" href="search.html?tagx?felidae"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                        </dt>
+                        <dd>Search for games with <code>felidae</code> tags in any namespace. This example will search for games that contain felidae furries.</dd>
+                    </dl>
+                </section>
+                <section>
+                    <h3>Specify the namespace where tags are located</h3>
+                    <dl>
+                        <dt>
+                            <code>male:dog</code><a target="_blank" href="search.html?tagx?male:dog"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                        </dt>
+                        <dd>Search for games that contain the <code>dog</code> tag in the <code>male</code> namespace. This example will search for games that contain male dog furries.</dd>
+                    </dl>
+                </section>
+                <section>
+                    <h3>When do you need quotes?</h3>
+                    <p>If you are using a tag that includes spaces, you <strong>MUST</strong> place it in double quotes. If the tag does not contain spaces, you can use double quotes or not.</p>
+                    <dl>
+                        <div>
+                            <dt>
+                                <code>type:visual-novel</code><a target="_blank" href="search.html?tagx?type:visual-novel"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                            </dt>
+                            <dt>
+                                <code>"type:visual-novel"</code><a target="_blank" href='search.html?tagx?"type:visual-novel"'><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                            </dt>
+                            <dd>Search for games that contain the <code>visual-novel</code> tag in the <code>type</code> namespace. This example will search for visual novel games. In this case, the two writings are equivalent.</dd>
+                        </div>
+                        <dt>
+                            <code>"author:The Echo Project"</code><a target="_blank" href='search.html?tagx?"author:The Echo Project"'><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                        </dt>
+                        <dd>Search for games that contain the <code>"The Echo Project"</code> tag in the <code>author</code> namespace. This example will search for games developed by The Echo Project. Searching with <code>author:The Echo Project</code> (without quotes) will not work as expected.</dd>
+                    </dl>
+                </section>
+                <section>
+                    <h3>If you need to exclude tags</h3>
+                    <dl>
+                        <dt>
+                            <code>not misc:work-in-process</code><a target="_blank" href="search.html?tagx?not misc:work-in-process"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                        </dt>
+                        <dd>Search for games that don't have the <code>work-in-process</code> tag in the <code>misc</code> namespace. This example will search for games that are already released (not still in development).</dd>
+                        <dt>
+                            <code>not yiff</code><a target="_blank" href="search.html?tagx?not yiff"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                        </dt>
+                        <dd>Search for games that do not contain the <code>yiff</code> tag in any namespace. This example will exclude games with adult contents. The <code>yiff</code> tag exists only in the <code>type</code> namespace. So for this tag, <code>type:yiff</code> and <code>yiff</code> are equivalent.</dd>
+                    </dl>
+                </section>
+            </article>
+            <hr />
+            <article>
+                <h2>Search multiple tags</h2>
+                <section>
+                    <h3>and, or, not</h3>
+                    <dl>
+                        <div>
+                            <dt>
+                                <code>misc:3d lang:en wolf</code><a target="_blank" href="search.html?tagx?misc:3d lang:en wolf"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                            </dt>
+                            <dt>
+                                <code>misc:3d and lang:en and wolf</code><a target="_blank" href="search.html?tagx?misc:3d and lang:en and wolf"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                            </dt>
+                            <dd>Search for games with both <code>misc:3d</code> <code>lang:en</code> <code>wolf</code> tags (preceded by a colon to specify the namespace).</dd>
+                        </div>
+                        <div>
+                            <dt>
+                                <code>misc:freeware platform:android type:bara</code><a target="_blank" href="search.html?tagx?misc:freeware platform:android type:bara"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                            </dt>
+                            <dt>
+                                <code>misc:freeware and platform:android and type:bara</code><a target="_blank" href="search.html?tagx?misc:freeware and platform:android and type:bara"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                            </dt>
+                            <dd>Search for games that have both <code>misc:freeware</code> <code>platform:android</code> <code>type:bara</code> tags (preceded by a colon to specify the namespace).</dd>
+                        </div>
+                        <dt>
+                            <code>canine or dragon</code><a target="_blank" href="search.html?tagx?canine or dragon"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                        </dt>
+                        <dd>Search for games containing <code>canine</code> tag or <code>dragon</code> tag or both.</dd>
+                        <dt>
+                            <code>male:canine or female:canine</code><a target="_blank" href="search.html?tagx?male:canine or female:canine"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                        </dt>
+                        <dd>Search for games with <code>male:canine</code> tag or with <code>female:canine</code> tag or with both. (In this example, the expression is actually equivalent to searching for <code>canine</code>.</dd>
+                        <dt>
+                            <code>male:felidae and visual-novel not "author:Studio Klondike"</code><a target="_blank" href='search.html?tagx?male:felidae and visual-novel not "author:Studio Klondike"'><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                        </dt>
+                        <dd>Search for games with <code>male:fedidae</code> tag and <code>visual-novel</code> tag, but without the <code>"author:Studio Klondike"</code> tag. This example will search for visual novels that include male feline furries, but are not developed by <code>"Studio Klondike"</code>.</dd>
+                    </dl>
+                </section>
+                <section>
+                    <h3>Change priority</h3>
+                    <p>The priority of an expression is running left-to-right, and you can add parentheses to force a change in priority. Parentheses are as whole parts in the operation with the parent.</p>
+                    <p>Consider the <code>male:canine and type:visual-novel or type:dating-sim</code><a target="_blank" href="search.html?tagx?male:canine and type:visual-novel or type:dating-sim"><span class="icon" data-icon="search" aria-hidden="true"></span></a> expression that looks for games with <code>male:canine</code><a target="_blank" href="search.html?tagx?male:canine"><span class="icon" data-icon="search" aria-hidden="true"></span></a>, then filters for games with <code>type:visual-novel</code><a target="_blank" href="search.html?tagx?type:visual-novel"><span class="icon" data-icon="search" aria-hidden="true"></span></a>, and then adds  all games with <code>type:dating-sim</code><a target="_blank" href="search.html?tagx?type:dating-sim"><span class="icon" data-icon="search" aria-hidden="true"></span></a> tag. So it will search for visual novels that contain male canines or dating simulators (not necessarily contain male canines). If you are looking for visual novels or dating simulators both with canine furries, this is obviously not what you want. The solution is to have the search engine do a search for <code>type:visual-novel or type:dating-sim</code><a target="_blank" href="search.html?tagx?type:visual-novel or type:dating-sim"><span class="icon" data-icon="search" aria-hidden="true"></span></a> first and then filters the results with <code>male:canine</code>. We can rewrite the expression in left-to-right order, or we can change the priority with parentheses.</p>
+                    <dl>
+                        <dt>
+                            <code>male:canine and (type:visual-novel or type:dating-sim)</code><a target="_blank" href="search.html?tagx?male:canine and (type:visual-novel or type:dating-sim)"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                        </dt>
+                        <dd>This expression will find games that are "visual novels" or "dating simulators", and then filter them for games that contain male canines.</dd>
+                        <dt>
+                            <code>misc:3d and (lang:en or lang:zh or lang:en-unofficial or lang:zh-unofficial) not type:yiff</code><a target="_blank" href="search.html?tagx?misc:3d and (lang:en or lang:zh or lang:en-unofficial or lang:zh-unofficial) not type:yiff"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                        </dt>
+                        <dd>Search for all-ages 3D style games that support English or Chinese language.</dd>
+                        <dt>
+                            <code>A and (B or (C and D) not (E or (F and G)))</code><a target="_blank" href="search.html?tagx?A and (B or (C and D) not (E or (F and G)))"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                        </dt>
+                        <dd>This example only indicates that multiple levels can exist in parentheses. The maximum number of levels is browser-specific.</dd>
+                    </dl>
+                </section>
+                <section>
+                    <h3>Change the order</h3>
+                    <dl>
+                        <dt>
+                            <code>@reverse</code><a target="_blank" href="search.html?tagx?@reverse"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                        </dt>
+                        <dd>Search all games, but the results are sorted alphabetically by Z-A. (Reverse A-Z order)</dd>
+                        <dt>
+                            <code>@lastmod</code><a target="_blank" href="search.html?tagx?@lastmod"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                        </dt>
+                        <dd>Search all games, but sort by most recently modified, the most recently modified games are at the front of the results.</dd>
+                        <dt>
+                            <code>@lastmod @reverse</code><a target="_blank" href="search.html?tagx?@lastmod @reverse"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                        </dt>
+                        <dd>Search all games, but reverse the order of most recent modified, the most recently modified games are at the end of the results.</dd>
+                        <dt>
+                            <code>misc:freeware @lastmod</code><a target="_blank" href="search.html?tagx?misc:freeware @lastmod"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                        </dt>
+                        <dd>Search for games with <code>misc:freeware</code> tag, but reverse sort by most recently modified, with most recently modified games are at the front of the results.</dd>
+                        <dt>
+                            <code>platform:android or platform:ios @reverse</code><a target="_blank" href="search.html?tagx?platform:android or platform:ios @reverse"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                        </dt>
+                        <dd>Search for Android or iOS games, but the results are the reverse of <code>platform:android or platform:ios</code> search results.</dd>
+                        <dt>
+                            <code>platform:android or (platform:ios @reverse)</code><a target="_blank" href="search.html?tagx?platform:android or (platform:ios @reverse)"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                        </dt>
+                        <dd>Search for Android or iOS games, but games which <strong>ONLY</strong> contains the <code>platform:ios</code> tag will be sorted in Z-A alphabetical order. (Reverse A-Z order)</dd>
+                        <dt>
+                            <code>platform:android @lastmod or platform:ios</code><a target="_blank" href="search.html?tagx?platform:android @lastmod or platform:ios"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                        </dt>
+                        <dd>Search for Android or iOS games, but games which contains the <code>platform:android</code> tag or contains both tags will be sorted by most recently modified, the most recently modified games are at the front of the results.</dd>
+                        <div>
+                            <dt>
+                                <code>steam and itchio @lastmod</code><a target="_blank" href="search.html?tagx?steam and itchio @lastmod"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                            </dt>
+                            <dt>
+                                <code>steam itchio @lastmod</code><a target="_blank" href="search.html?tagx?steam itchio @lastmod"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                            </dt>
+                            <dt>
+                                <code>steam @lastmod and itchio</code><a target="_blank" href="search.html?tagx?steam @lastmod and itchio"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                            </dt>
+                            <dt>
+                                <code>steam @lastmod itchio</code><a target="_blank" href="search.html?tagx?steam @lastmod itchio"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                            </dt>
+                            <dd>Search for games that are both published on itch.io and Steam, but sort by most recently modified, the most recently modified games are at the front of the results.</dd>
+                        </div>
+                        <div>
+                            <dt>
+                                <code>steam and (itchio @lastmod)</code><a target="_blank" href="search.html?tagx?steam and (itchio @lastmod)"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                            </dt>
+                            <dt>
+                                <code>steam (itchio @lastmod)</code><a target="_blank" href="search.html?tagx?steam (itchio @lastmod)"><span class="icon" data-icon="search" aria-hidden="true"></span></a>
+                            </dt>
+                            <dd>It may seem strange to users, but this is actually the equivalent of <code>steam and itchio</code> or <code>steam itchio</code>.</dd>
+                        </div>
+                    </dl>
+                </section>
+            </article>
+        </main>
+        <hr />
+        <footer class="body1">
+            <section>
+                <p>Copyright The FurryGamesIndex project, The data on this site is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA 4.0</a>. The copyright of some data (such as game screenshots) belongs to the original owner. We only release them under the premise of <a href="https://en.wikipedia.org/wiki/Fair_use">fair use</a>.</p>
+                <p><a href="../privacy-policy.html">Privacy Policy</a></p>
+                <p><a href="../credits.html">Powered by Open-source softwares</a></p>
+            </section>
+            <section>
+                <p>
+                    <a href="../languages.html"><span class="icon" data-icon="language" aria-hidden="true"></span>Switch Language</a>
+                </p>
+                <p>
+                    <a href="./preferences.html"><span class="icon" data-icon="settings" aria-hidden="true"></span>Site Preferences</a>
+                </p>
+                <p>Found something missing or wrong? want to add new games? Or want to improve FurryGamesIndex? <a href="https://github.com/FurryGamesIndex/games/blob/master/doc/Get-Involved.en.md">Get Involved</a> now!</p>
+                <address>
+                    Contact FurryGamesIndex project by<br />
+                    <a title="Email" href="mailto:webmaster@furrygames.top"><span class="icon" data-icon="email" aria-hidden="true"></span></a>
+                    <a title="Telegram" href="https://t.me/FurryGamesIndex"><span class="icon" data-icon="telegram" aria-hidden="true"></span></a>
+                    <a title="Github" href="https://github.com/FurryGamesIndex/games"><span class="icon" data-icon="github" aria-hidden="true"></span></a>
+                </address>
+            </section>
+            <section>
+                <p>
+                    <a href="./feed.xml"><span class="icon" data-icon="rss_feed" aria-hidden="true"></span>RSS Feed</a>
+                </p>
+                <p>RSS Feed will push the last 30 game pages added or edited in chronological order.</p>
+            </section>
+        </footer>
+    </body>
+</html>

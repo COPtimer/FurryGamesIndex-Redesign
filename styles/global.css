@@ -64,19 +64,8 @@ dl {
     margin: 0;
 }
 
-dt {
-    flex-basis: 100%;
-    margin-bottom: 4px;
-}
-
 dd {
-    display: inline-flex;
     margin: 0;
-    margin-bottom: 4px;
-}
-
-dd:not(:last-of-type) {
-    margin-right: 4px;
 }
 
 /* 分隔线 */
@@ -536,6 +525,20 @@ h2 {
     margin-bottom: var(--main-column-gap);
 }
 
+.labels dt {
+    flex-basis: 100%;
+    margin-bottom: 4px;
+}
+
+.labels dd {
+    display: inline-flex;
+    margin-bottom: 4px;
+}
+
+.labels dd:not(:last-of-type) {
+    margin-right: 4px;
+}
+
 .labels div {
     display: flex;
     align-items: flex-start;
@@ -713,7 +716,8 @@ h2 {
 
 .preferences,
 .languages,
-.faq {
+.faq,
+.search-help {
     max-width: calc(3 * var(--main-grid-unit) + 2 * var(--main-column-gap));
     display: grid;
     grid-auto-flow: row;
@@ -732,45 +736,98 @@ h2 {
     margin-bottom: 15px;
 }
 
-:is(.preferences, .languages, .faq) p:not(:last-of-type) {
+:is(.preferences, .languages, .faq, .search-help) p:not(:last-child) {
     margin-bottom: 8px;
 }
 
 /*------------------------------------*\
-  常见问题
+  常见问题及搜索帮助
 \*------------------------------------*/
 
-.faq {
+:is(.faq, .search-help) {
     user-select: text;
 }
 
-.faq section:not(:last-of-type) {
+:is(.faq, .search-help) section:not(:last-of-type) {
     margin-bottom: 40px;
 }
 
-:where(:lang(zh), :lang(ja)) .faq h2 {
+:where(:lang(zh), :lang(ja)) :is(.faq, .search-help) h2 {
     font-weight: 700;
     margin-bottom: 18px;
 }
 
-:lang(en) .faq h2 {
+:where(:lang(en)) :is(.faq, .search-help) h2 {
     font-weight: 700;
     margin-bottom: 19px;
 }
 
-.faq h3 {
+:is(.faq, .search-help) h3 {
     font-size: 1.25rem;
     font-weight: 700;
     letter-spacing: 0.005em;
     line-height: var(--title-leading);
 }
 
-:where(:lang(zh), :lang(ja)) .faq h3 {
+:where(:lang(zh), :lang(ja)) :is(.faq, .search-help) h3 {
     margin-bottom: 9px;
 }
 
-:lang(en) .faq h3 {
+:where(:lang(en)) :is(.faq, .search-help) h3 {
     margin-bottom: 8px;
+}
+
+/*------------------------------------*\
+  搜索帮助
+\*------------------------------------*/
+
+.search-help .icon {
+    font-size: 1.125rem;
+    vertical-align: middle;
+}
+
+.search-help dl {
+    outline: 1px solid var(--accent-text-color);
+}
+
+.search-help dt {
+    background-color: var(--accent-background-color);
+}
+
+:where(:lang(zh), :lang(ja)) .search-help dt {
+    padding: 7px var(--keyline);
+}
+
+:where(:lang(en)) .search-help dt {
+    padding: 8px var(--keyline);
+}
+
+.search-help div dt {
+    padding: 0px var(--keyline);
+}
+
+:where(:lang(zh), :lang(ja)) .search-help div dt:first-of-type {
+    padding-top: 7px;
+}
+
+:where(:lang(en)) .search-help div dt:first-of-type {
+    padding-top: 8px;
+}
+
+:where(:lang(zh), :lang(ja)) .search-help div dt:last-of-type {
+    padding-bottom: 7px;
+}
+
+:where(:lang(en)) .search-help div dt:last-of-type {
+    padding-bottom: 8px;
+}
+
+:where(:lang(zh), :lang(ja)) .search-help dd {
+    padding: 11px var(--keyline);
+}
+
+:where(:lang(en)) .search-help dd {
+    padding: 12px var(--keyline);
 }
 
 /*------------------------------------*\
@@ -961,7 +1018,7 @@ h2 {
         letter-spacing: 0.005em;
         line-height: var(--title-leading);
     }
-    .faq h3 {
+    :is(.faq, .search-help) h3 {
         font-size: 1rem;
         letter-spacing: 0.01em;
         line-height: var(--subheading-leading);
@@ -1051,12 +1108,13 @@ h2 {
     }
     .preferences,
     .languages,
-    .faq {
+    .faq,
+    .search-help {
         max-width: var(--main-grid-unit);
         padding: 0;
         row-gap: 20px;
     }
-    .faq section:not(:last-of-type) {
+    :is(.faq, .search-help) section:not(:last-of-type) {
         margin-bottom: 20px;
     }
     .category {
@@ -1114,6 +1172,7 @@ h2 {
     .preferences,
     .languages,
     .faq,
+    .search-help,
     footer {
         padding: 0 var(--keyline);
     }
