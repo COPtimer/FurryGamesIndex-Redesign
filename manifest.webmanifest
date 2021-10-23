@@ -1,6 +1,10 @@
 {
   "name": "Furry Games Index",
   "icons": [
+    { "src": "./resources/icon-16.png", "type": "image/png", "sizes": "16x16" },
+    { "src": "./resources/icon-24.png", "type": "image/png", "sizes": "24x24" },
+    { "src": "./resources/icon-32.png", "type": "image/png", "sizes": "32x32" },
+    { "src": "./resources/icon-48.png", "type": "image/png", "sizes": "48x48" },
     { "src": "./resources/icon-192.png", "type": "image/png", "sizes": "192x192" },
     { "src": "./resources/icon-192-maskable.png", "type": "image/png", "sizes": "192x192", "purpose": "maskable" },
     { "src": "./resources/icon-512.png", "type": "image/png", "sizes": "512x512" }
